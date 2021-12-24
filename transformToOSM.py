@@ -2,8 +2,8 @@ import csv
 import sys
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
-csv_file_path = sys.argv[1]
-osm_file_path = sys.argv[1][:-3] + "osm"
+osm_file_path = sys.argv[1]
+csv_file_path = sys.argv[1][:-3] + "csv"
 
 if not len(sys.argv) in [2, 3]: # if without a path of csv file to read
     print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
