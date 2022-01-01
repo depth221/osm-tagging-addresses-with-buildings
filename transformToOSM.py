@@ -9,8 +9,8 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree
 #    print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
 #    sys.exit()
 
-csv_file_path = "suwan1_shp_address.csv"
-input_osm_file_path = "suwan1.osm"
+csv_file_path = "sinchang4_shp_address.csv"
+input_osm_file_path = "sinchang4.osm"
 output_osm_file_path = input_osm_file_path[:-4] + "_addr.osm"
 
 input_csv_file = open(csv_file_path, 'r', encoding="utf-8")
