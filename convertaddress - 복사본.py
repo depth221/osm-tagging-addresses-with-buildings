@@ -5,7 +5,7 @@ import time
 
 start = time.time()
 
-csv_file_path = "munheung1_shp.csv"
+csv_file_path = "gw2_shp.csv"
 
 csv_incoding = "utf-8" # set the incoding of csv file to read
 if len(sys.argv) == 3:
@@ -30,7 +30,7 @@ fr_csv[0].append('level')
 fr_csv[0].append('addr:door')
 
 for j in range(2, len(keys_to_add)):
-    if keys_to_add[j] in ['address', 'addr:full']:
+    if keys_to_add[j] in ['도로명주소', 'addr:full']:
         # if addresses exist
         print("Info: Found the tag '" + keys_to_add[j] + "'")
         

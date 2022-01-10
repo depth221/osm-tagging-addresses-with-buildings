@@ -9,11 +9,11 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree
 #    print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
 #    sys.exit()
 
-csv_file_path = "munheung1_shp_address.csv"
-input_osm_file_path = "munheung1.osm"
+csv_file_path = "sinchang6_shp_address.csv"
+input_osm_file_path = "sinchang6.osm"
 output_osm_file_path = input_osm_file_path[:-4] + "_addr.osm"
 
-input_csv_file = open(csv_file_path, 'r', encoding="utf-8")
+input_csv_file = open(csv_file_path, 'r', encoding="euc-kr")
 input_csv = csv.reader(input_csv_file)
 
 input_osm_file = open(input_osm_file_path, 'r', encoding="utf-8")
@@ -26,7 +26,7 @@ for line in input_csv:
         continue
     
     for way in root.iter("way"):
-        if way.attrib["id"] == line[0]:
+        if way.attrib["id"] == line[1]:
             has_addr_street = False
             has_addr_housenumber = False
             
@@ -39,7 +39,7 @@ for line in input_csv:
 
             street_tag = SubElement(way, "tag")
             street_tag.attrib["k"] = "addr:street"
-            street_tag.attrib["v"] = line[6]
+            street_tag.attrib["v"] = line[9]
             way.attrib["action"] = "modify"
 
 
@@ -52,7 +52,7 @@ for line in input_csv:
 
             housenumber_tag = SubElement(way, "tag")
             housenumber_tag.attrib["k"] = "addr:housenumber"
-            housenumber_tag.attrib["v"] = line[7]
+            housenumber_tag.attrib["v"] = line[10]
 
 input_xml.write(output_osm_file_path)
 
