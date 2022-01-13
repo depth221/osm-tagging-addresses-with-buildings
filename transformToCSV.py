@@ -9,7 +9,7 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree
 #    print("Usage: python transformToCSV.py <osm_file>\n")
 #    sys.exit()
 
-osm_file_path = "gw3.osm"
+osm_file_path = "jj1.osm"
 csv_file_path = osm_file_path[:-3] + "csv"
 input_osm = open(osm_file_path, 'r', encoding="utf-8")
 output = open(csv_file_path,'w', newline='')
