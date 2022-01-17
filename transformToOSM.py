@@ -9,8 +9,8 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree
 #    print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
 #    sys.exit()
 
-csv_file_path = "sinchang6_shp_address.csv"
-input_osm_file_path = "sinchang6.osm"
+csv_file_path = "jj2_shp_address.csv"
+input_osm_file_path = "jj2.osm"
 output_osm_file_path = input_osm_file_path[:-4] + "_addr.osm"
 
 input_csv_file = open(csv_file_path, 'r', encoding="euc-kr")
@@ -27,6 +27,7 @@ for line in input_csv:
     
     for way in root.iter("way"):
         if way.attrib["id"] == line[1]:
+            print(line[1])
             has_addr_street = False
             has_addr_housenumber = False
             
@@ -41,6 +42,7 @@ for line in input_csv:
             street_tag.attrib["k"] = "addr:street"
             street_tag.attrib["v"] = line[9]
             way.attrib["action"] = "modify"
+            
 
 
             for tag in way.iter("tag"):

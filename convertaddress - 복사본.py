@@ -5,9 +5,9 @@ import time
 
 start = time.time()
 
-csv_file_path = "gw2_shp.csv"
+csv_file_path = "jj2_shp.csv"
 
-csv_incoding = "utf-8" # set the incoding of csv file to read
+csv_incoding = "euc-kr" # set the incoding of csv file to read
 if len(sys.argv) == 3:
     csv_incoding = sys.argv[2]
 print("Info: Incoding of the csv file is " + csv_incoding)
