@@ -5,7 +5,7 @@ import time
 
 start = time.time()
 
-csv_file_path = "jj2_shp.csv"
+csv_file_path = "jj3_shp.csv"
 
 csv_incoding = "euc-kr" # set the incoding of csv file to read
 if len(sys.argv) == 3:
