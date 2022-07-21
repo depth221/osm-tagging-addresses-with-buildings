@@ -2,14 +2,11 @@ import csv
 import sys
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
-#osm_file_path = sys.argv[1]
-#csv_file_path = osm_file_path[:-3] + "csv"
+if not len(sys.argv) == 2: # if without a path of csv file to read
+    print("Usage: python transformToCSV.py <osm_file>\n")
+    sys.exit()
 
-#if not len(sys.argv) == 2: # if without a path of csv file to read
-#    print("Usage: python transformToCSV.py <osm_file>\n")
-#    sys.exit()
-
-osm_file_path = "jj1.osm"
+osm_file_path = sys.argv[1]
 csv_file_path = osm_file_path[:-3] + "csv"
 input_osm = open(osm_file_path, 'r', encoding="utf-8")
 output = open(csv_file_path,'w', newline='')

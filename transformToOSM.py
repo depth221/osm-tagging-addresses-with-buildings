@@ -2,15 +2,13 @@ import csv
 import sys
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
-#osm_file_path = sys.argv[1]
-#csv_file_path = sys.argv[1][:-3] + "csv"
 
-#if not len(sys.argv) in [2, 3]: # if without a path of csv file to read
-#    print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
-#    sys.exit()
+if not len(sys.argv) in [2, 3]: # if without a path of csv file to read
+    print("Usage: python csvtoosm.py <csv_file> (<incoding_of_csv_file>)\n")
+    sys.exit()
 
-csv_file_path = "jj2_shp_address.csv"
-input_osm_file_path = "jj2.osm"
+input_osm_file_path = sys.argv[1]
+csv_file_path = sys.argv[1][:-3] + "csv"
 output_osm_file_path = input_osm_file_path[:-4] + "_addr.osm"
 
 input_csv_file = open(csv_file_path, 'r', encoding="euc-kr")
